@@ -1,0 +1,20 @@
+# menu
+#menu {
+	display: flex;
+	border: 1px solid black;
+	min-height: 20px;
+}
+#menu > input[type="checkbox"] {
+	display: none;
+}
+#menu input ~ span {
+	width: 0;
+	height: 0;
+	background-color: transparent;
+	transition: all .5s ease-in-out;
+}
+#menu input:checked ~ span {
+	width: 50px;
+	height: 50px;
+	background-color: rgb(43, 128, 134);
+}
