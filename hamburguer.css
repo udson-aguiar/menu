@@ -1,0 +1,51 @@
+# menu
+.container {
+    display: flex;
+    padding: 0px 0px 10px 10px;
+    flex-direction: column;
+    align-items: flex-start;
+    user-select: none;
+}
+.container input {
+    display: none;
+}
+.checkmark {
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 30px;
+}
+.menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.container input ~ ul li {
+    max-height: 0;
+    opacity: 0;
+    transition: all .3s ease-in-out;
+}
+.checkmark::after {
+    position: relative;
+    top: -2px;
+    content: "\2630";
+    font-size: 30px;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+}
+.container input:checked ~ .checkmark::after {
+    content: "\2715";
+    font-size: 29px;
+}
+.container input:checked ~ ul li {
+    min-height: 0.8em;
+    padding: 0.5em;
+    opacity: 1;
+    margin: 0px 0px 5px 10px;
+}
+.container input ~ ul li a {
+    display: none;
+}
+.container input:checked ~ ul li a {
+    display: block;
+}
